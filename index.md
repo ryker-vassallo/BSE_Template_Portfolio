@@ -3,7 +3,7 @@ This project utilizes the gyroscope in a phone and multiple servo motors to cont
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Ryker Vassallo | The Nueva School | Mechanical Engineering | Incoming Junior
+| Ryker V | The Nueva School | Mechanical Engineering | Incoming Junior
 
   
 # Final Milestone
