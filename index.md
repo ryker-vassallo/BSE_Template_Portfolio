@@ -35,8 +35,11 @@ My first milestone in this project was designing my tilt maze and my servo circu
 <b><font color="#d35400">BluetoothSerial</font></b> <font color="#d35400">SerialBT</font><font color="#000000">;</font>
 <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">servoPinRoll</font> <font color="#434f54">=</font> <font color="#000000">18</font><font color="#000000">;</font>
 <font color="#00979c">const</font> <font color="#00979c">int</font> <font color="#000000">servoPinPitch</font> <font color="#434f54">=</font> <font color="#000000">19</font><font color="#000000">;</font>
-<font color="#00979c">int</font> <font color="#000000">receivedInt</font><font color="#000000">;</font>
-<font color="#00979c">int</font> <font color="#000000">updatedInt</font><font color="#000000">;</font>
+<font color="#00979c">char</font> <font color="#000000">incomingNum</font><font color="#000000">;</font>
+<font color="#00979c">float</font> <font color="#000000">updatedInt</font><font color="#000000">;</font>
+<font color="#00979c">String</font> <font color="#000000">message</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;&#34;</font><font color="#000000">;</font>
+<font color="#00979c">float</font> <font color="#000000">posPitch</font><font color="#000000">;</font>
+<font color="#00979c">float</font> <font color="#000000">posRoll</font><font color="#000000">;</font>
 <b><font color="#d35400">Servo</font></b> <font color="#000000">servoPitch</font><font color="#000000">;</font>
 <b><font color="#d35400">Servo</font></b> <font color="#000000">servoRoll</font><font color="#000000">;</font>
 
@@ -52,25 +55,40 @@ My first milestone in this project was designing my tilt maze and my servo circu
  &nbsp;<font color="#000000">servoPitch</font><font color="#434f54">.</font><font color="#000000">setPeriodHertz</font><font color="#000000">(</font><font color="#000000">50</font><font color="#000000">)</font><font color="#000000">;</font>
  &nbsp;<font color="#000000">servoRoll</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">servoPinRoll</font><font color="#434f54">,</font> <font color="#000000">500</font><font color="#434f54">,</font> <font color="#000000">2400</font><font color="#000000">)</font><font color="#000000">;</font> 
  &nbsp;<font color="#000000">servoPitch</font><font color="#434f54">.</font><font color="#d35400">attach</font><font color="#000000">(</font><font color="#000000">servoPinPitch</font><font color="#434f54">,</font> <font color="#000000">500</font><font color="#434f54">,</font> <font color="#000000">2400</font><font color="#000000">)</font><font color="#000000">;</font> 
+ &nbsp;<font color="#000000">servoRoll</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">90</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;<font color="#000000">servoPitch</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">90</font><font color="#000000">)</font><font color="#000000">;</font>
 <font color="#000000">}</font>
 
 <font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;<font color="#000000">receivedInt</font> <font color="#434f54">=</font> <font color="#000000">(</font><font color="#00979c">int</font><font color="#000000">)</font><font color="#d35400">SerialBT</font><font color="#434f54">.</font><font color="#d35400">read</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">available</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">SerialBT</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">read</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">;</font>
- &nbsp;<font color="#000000">}</font>
  &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#d35400">SerialBT</font><font color="#434f54">.</font><font color="#d35400">available</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font> <font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">SerialBT</font><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;Received:&#34;</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47; write on BT app</font>
- &nbsp;&nbsp;&nbsp;<font color="#d35400">SerialBT</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">receivedInt</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47; write on BT app &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
- &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font> <font color="#000000">(</font><font color="#005c5f">&#34;Received:&#34;</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;print on serial monitor</font>
- &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">receivedInt</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;print on serial monitor &nbsp;&nbsp;&nbsp;</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">receivedInt</font> <font color="#434f54">&gt;</font> <font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">updatedInt</font> <font color="#434f54">=</font> <font color="#000000">receivedInt</font> <font color="#434f54">-</font> <font color="#000000">1000</font><font color="#000000">;</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">servoRoll</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">updatedInt</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">incomingNum</font> <font color="#434f54">=</font> <font color="#d35400">SerialBT</font><font color="#434f54">.</font><font color="#d35400">read</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#000000">message</font> <font color="#434f54">+=</font> <font color="#00979c">String</font><font color="#000000">(</font><font color="#000000">incomingNum</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">incomingNum</font> <font color="#434f54">==</font> <font color="#00979c">&#39;a&#39;</font><font color="#000000">)</font><font color="#000000">{</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">posPitch</font> <font color="#434f54">=</font> <font color="#000000">message</font><font color="#434f54">.</font><font color="#000000">toFloat</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">posPitch</font> <font color="#434f54">=</font> <font color="#000000">posPitch</font> <font color="#434f54">+</font> <font color="#000000">90</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;&#34;</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">servoPitch</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">posPitch</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Pos Pitch: &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">posPitch</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
- &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">receivedInt</font> <font color="#434f54">&lt;</font> <font color="#000000">1000</font><font color="#000000">)</font><font color="#000000">{</font>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">servoPitch</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">receivedInt</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">incomingNum</font> <font color="#434f54">==</font> <font color="#00979c">&#39;b&#39;</font><font color="#000000">)</font><font color="#000000">{</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">posRoll</font> <font color="#434f54">=</font> <font color="#000000">message</font><font color="#434f54">.</font><font color="#000000">toFloat</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">posRoll</font> <font color="#434f54">=</font> <font color="#000000">posRoll</font> <font color="#434f54">+</font> <font color="#000000">90</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;&#34;</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">servoRoll</font><font color="#434f54">.</font><font color="#d35400">write</font><font color="#000000">(</font><font color="#000000">posRoll</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Pos Roll: &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">posRoll</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;Serial.println(&#34;message: &#34;);</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;Serial.println(message);</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;SerialBT.println(incomingNum);&#47;&#47; write on BT app &nbsp;&nbsp;&nbsp;&nbsp;</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;Serial.println(&#34;Char: &#34;);</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;Serial.println(incomingNum);&#47;&#47;print on serial monitor </font>
+ &nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;
  &nbsp;<font color="#000000">}</font>
  &nbsp;
 <font color="#000000">}</font>
