@@ -20,7 +20,6 @@ My first milestone in this project was designing my tilt maze and my servo circu
 # Code
 <pre>
 <font color="#434f54">&#47;&#47;This example code is in the Public Domain (or CC0 licensed, at your option.)</font>
-<font color="#434f54">&#47;&#47;</font>
 <font color="#434f54">&#47;&#47;This example creates a bridge between Serial and Classical Bluetooth (SPP)</font>
 <font color="#434f54">&#47;&#47;and also demonstrate that SerialBT have the same functionalities of a normal Serial</font>
 
