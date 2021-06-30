@@ -19,6 +19,8 @@ My first milestone in this project was designing my tilt maze and my servo circu
 
 # Code / Setup
 ![circuit](https://user-images.githubusercontent.com/86121632/123455891-14c27b80-d597-11eb-95dd-bb2e9d7f4ce4.png)
+![mitappinventorcode](https://user-images.githubusercontent.com/86121632/124000897-ed015800-d988-11eb-87ae-306df5e04b42.png)
+
 <pre>
 <font color="#434f54">&#47;&#47;This example code is in the Public Domain (or CC0 licensed, at your option.)</font>
 <font color="#434f54">&#47;&#47;This example creates a bridge between Serial and Classical Bluetooth (SPP)</font>
