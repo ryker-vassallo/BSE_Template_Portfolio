@@ -15,9 +15,10 @@ FILL
 [![Video1](https://res.cloudinary.com/marcomontalbano/image/upload/v1624641303/video_to_markdown/images/youtube--xaeBMSuE92U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=xaeBMSuE92U&feature=youtu.be&scrlybrkr=7484f1f7&ab_channel=BlueStampEng "Video1")
 My first milestone in this project was designing my tilt maze and my servo circuit. Although my initial plan was to create the maze out of cardboard and other low quality materials, I decided to attempt to construct it with legos. This provided me with both additional stability while building, and unique parts that helped immensely with the design. Along with the maze itself, I also designed a circuit similar to the one I will eventually use. I utilized the sample "knob" code for controlling a servo with a potentiometer and adapted it to two servos with two potentiometers. Understanding this relationship is vital, as my project also requires two servos working together.
 # Photos
-![circuit](https://user-images.githubusercontent.com/86121632/123455891-14c27b80-d597-11eb-95dd-bb2e9d7f4ce4.png)
 
-# Code
+
+# Code / Setup
+![circuit](https://user-images.githubusercontent.com/86121632/123455891-14c27b80-d597-11eb-95dd-bb2e9d7f4ce4.png)
 <pre>
 <font color="#434f54">&#47;&#47;This example code is in the Public Domain (or CC0 licensed, at your option.)</font>
 <font color="#434f54">&#47;&#47;This example creates a bridge between Serial and Classical Bluetooth (SPP)</font>
