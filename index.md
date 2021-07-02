@@ -1,5 +1,4 @@
-
-﻿# Phone Controlled Tilt Maze
+# Phone Controlled Tilt Maze
 This project utilizes the gyroscope in a phone and multiple servo motors to control a marble tilting maze.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
