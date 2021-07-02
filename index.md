@@ -7,10 +7,12 @@ This project utilizes the gyroscope in a phone and multiple servo motors to cont
 | Ryker V | The Nueva School | Mechanical Engineering | Incoming Junior
 
   
-# Final Milestone
-FILL
+# Third Milestone
+[![Milestone 3](https://res.cloudinary.com/marcomontalbano/image/upload/v1625244838/video_to_markdown/images/youtube--zWgE_grZCYQ-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=zWgE_grZCYQ&ab_channel=BlueStampEng "Milestone 3")
+My third and final presentation was a modification to my base project. Although I did not completely finalize this mod, I was able to get all of the code and wiring done. The intention of this mod was to signify using LEDs when the player has finished the tilt maze. I accomplished this by using an IR sensor that initiates a blinking led when activated.
 # Second Milestone
-FILL
+[![Milestone 2](https://res.cloudinary.com/marcomontalbano/image/upload/v1625244781/video_to_markdown/images/youtube--x2H_INznBB0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=x2H_INznBB0&ab_channel=BlueStampEng "Milestone 2")
+My second milestone within this project was project was finishing the base requirements. I started by using the MIT app inventor to create an android app that determined the orientation of the phone, and sent it via bluetooth to the ESP32. I subsequently designed code on the arduino ide to receive this signal and interpret it accordingly. Although I had many bugs in my initial rendition, I revised many times, effectively eliminated most issues.
 # First Milestone
 [![Video1](https://res.cloudinary.com/marcomontalbano/image/upload/v1624641303/video_to_markdown/images/youtube--xaeBMSuE92U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=xaeBMSuE92U&feature=youtu.be&scrlybrkr=7484f1f7&ab_channel=BlueStampEng "Video1")
 My first milestone in this project was designing my tilt maze and my servo circuit. Although my initial plan was to create the maze out of cardboard and other low quality materials, I decided to attempt to construct it with legos. This provided me with both additional stability while building, and unique parts that helped immensely with the design. Along with the maze itself, I also designed a circuit similar to the one I will eventually use. I utilized the sample "knob" code for controlling a servo with a potentiometer and adapted it to two servos with two potentiometers. Understanding this relationship is vital, as my project also requires two servos working together.
