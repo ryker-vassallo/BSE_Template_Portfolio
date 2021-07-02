@@ -16,6 +16,12 @@ My second milestone within this project was project was finishing the base requi
 [![Video1](https://res.cloudinary.com/marcomontalbano/image/upload/v1624641303/video_to_markdown/images/youtube--xaeBMSuE92U-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=xaeBMSuE92U&feature=youtu.be&scrlybrkr=7484f1f7&ab_channel=BlueStampEng "Video1")
 My first milestone in this project was designing my tilt maze and my servo circuit. Although my initial plan was to create the maze out of cardboard and other low quality materials, I decided to attempt to construct it with legos. This provided me with both additional stability while building, and unique parts that helped immensely with the design. Along with the maze itself, I also designed a circuit similar to the one I will eventually use. I utilized the sample "knob" code for controlling a servo with a potentiometer and adapted it to two servos with two potentiometers. Understanding this relationship is vital, as my project also requires two servos working together.
 # Photos
+![finalmaze](https://user-images.githubusercontent.com/86121632/124307377-9af13b80-db1c-11eb-921f-ca20a0be4809.jpg)
+![legoservo](https://user-images.githubusercontent.com/86121632/124307424-ac3a4800-db1c-11eb-99c4-d0f8ba421409.jpg)
+![secondconnection](https://user-images.githubusercontent.com/86121632/124307440-b2c8bf80-db1c-11eb-876e-e9bca981a6b8.jpg)
+![servoconnector](https://user-images.githubusercontent.com/86121632/124307463-b6f4dd00-db1c-11eb-815d-c1a894745d34.jpg)
+![tiltmaze1](https://user-images.githubusercontent.com/86121632/124307478-bbb99100-db1c-11eb-836c-1c69a0aa7625.jpg)
+![wiring1](https://user-images.githubusercontent.com/86121632/124307546-d2f87e80-db1c-11eb-9002-9e6c62ccf7ec.jpg)
 
 
 # Code / Setup
